@@ -1,5 +1,7 @@
 package com.freestack.spring.featureDoctor.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import javax.persistence.*;
 import java.time.LocalDate;
 
@@ -16,6 +18,7 @@ public class Doctor {
     private String city;
     private String phoneNumber;
     @OneToOne(mappedBy = "doctor")
+    @JsonIgnore
     private OpenCloseTime openCloseTime;
 
     public Long getId() {
